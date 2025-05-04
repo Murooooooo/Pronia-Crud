@@ -1,0 +1,29 @@
+﻿@model Slide
+<div class="container">
+	<form method="post" enctype="multipart/form-data">
+		<div class="form-group">
+			<label asp-for="Discount">Discount</label>
+			<input asp-for="Discount" type="text" class="form-control" placeholder="Enter Discount">
+		</div>
+
+
+
+		<div>
+			<label asp-for="Title">Title</label>
+			<input asp-for="Title" type="text" class="form-control" placeholder="Enter Title">
+		</div>
+		<div>
+			<label asp-for="SubTitle">Description</label>
+			<input asp-for="SubTitle" type="text" class="form-control" placeholder="Enter Description">
+		</div>
+		<div class="form-group">
+			<label asp-for="PhotoUrl">Image</label>
+			<input name="file" type="file" class="form-control" />
+		</div>
+
+		<button type="submit" class="btn btn-primary">Submit</button>
+
+	</form>
+
+
+</div>
