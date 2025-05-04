@@ -1,6 +1,7 @@
 using System.Diagnostics;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore.Query.Internal;
+using Pronia.ViewModels;
 using WebApplication4.DAL;
 using WebApplication4.Models;
 
@@ -21,7 +22,14 @@ namespace WebApplication4.Controllers
         public IActionResult Index()
         {
             var sliders = _context.Slides.ToList();
-            return View(sliders);
+            var categories= _context.Categories.ToList();
+            HomeVM vm = new()
+            {
+                Slides = sliders,
+                Categories = categories
+            };
+            
+            return View(vm);
         }
 
         public IActionResult Privacy()
