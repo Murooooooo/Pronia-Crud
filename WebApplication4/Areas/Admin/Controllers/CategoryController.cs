@@ -35,13 +35,13 @@ namespace Pronia.Areas.Admin.Controllers
 
             _context.Categories.Add(category);
             _context.SaveChanges();
-            return RedirectToAction("Index");
+            return RedirectToAction("Index");                                                             
 
         }
         public IActionResult Edit(int id)
         {
-            var products=_context.Products.FirstOrDefault(x=>x.Id==id);
-            return View(products);
+            var category=_context.Categories.FirstOrDefault(x=>x.Id==id);
+            return View(category);
         }
         [HttpPost]
         public IActionResult Edit(Category category,int id) 

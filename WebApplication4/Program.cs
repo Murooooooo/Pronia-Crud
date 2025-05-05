@@ -13,7 +13,7 @@ namespace WebApplication4
             builder.Services.AddControllersWithViews();
 
             builder.Services.AddDbContext<AppDbContext>(options =>
-                options.UseSqlServer(builder.Configuration.GetConnectionString("default")));
+                options.UseSqlServer(builder.Configuration.GetConnectionString("Home")));
 
             var app = builder.Build();
 

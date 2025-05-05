@@ -1,0 +1,40 @@
+﻿@model List<Product>
+@{
+    ViewBag.Title = "Slider";
+}
+<a class="btn btn-success" asp-action="create">Create</a>
+<table class="table table-bordered table-striped table-dark table-hover">
+    <thead>
+        <tr>
+            <th>Name</th>
+            <th>Description</th>
+            <th>Price</th>
+            <th>Photo</th>
+            <th>Action</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var item in Model)
+        {
+            <tr>
+                <td>@item.Name</td>
+                <td>@item.Description</td>
+                <td>@item.Price</td>
+                <td>
+                    @foreach (var photo in item.photo)
+                    {
+                        <img src="@photo.PhotoUrl" />
+                    }
+                </td>
+                <td>
+                    <a class="btn btn-success" asp-action="create">Create</a>
+                    <a class="btn btn-warning" asp-action="Edit" asp-route-id="@item.Id">Edit</a>
+                    <a class="btn btn-danger" asp-action="Delete" asp-route-id="@item.Id">Delete</a>
+                </td>
+            </tr>
+
+        }
+
+
+    </tbody>
+</table>
